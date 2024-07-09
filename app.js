@@ -62,11 +62,11 @@ function encriptarTexto (texto) {
 }
 
 // Testeo de la función de encriptar
-console.log("Ingresa texto");
-let textito = prompt("Ingresar texto:");
-console.log("Texto ingresado: " + textito);
-let textoEnc = encriptarTexto(textito);
-console.log("Resultado texto encriptado: " + textoEnc);
+// console.log("Ingresa texto");
+// let textito = prompt("Ingresar texto:");
+// console.log("Texto ingresado: " + textito);
+// let textoEnc = encriptarTexto(textito);
+// console.log("Resultado texto encriptado: " + textoEnc);
 
 function desencriptarTexto (textoEncriptado) {
     /*
