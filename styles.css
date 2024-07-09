@@ -1,25 +1,35 @@
 :root {
-    /* Sigo esta paleta: */
-    /* https://coolors.co/palette/f7b267-f79d65-f4845f-f27059-f25c54 */
-    --color-primario: #F7B267;
-    --color-secundario: #F79D65;
-    --color-tercero: #F4845F;
-    --color-cuarto: #F27059;
-    --color-quinto: #F25C54;
-
-    --color-blanco: #fff8f0;
+    /* Sigo los colores de Figma */
+    --color-blanco: #ffffff;
+    --color-azul: #0a3871;
+    --color-fondo: #f3f5fc;
+    --color-gris-claro: #d8dfe8;
+    --color-gris-oscuro: #495057;
+    
+    --color-letra-output: var(--color-gris-oscuro);
+    --color-letra-input: var(--color-azul);
 }
 
 * {
     /* Reset */
     margin: 0;
     padding: 0;
+
+    font-family: "Inter", sans-serif;
+    color: var(--color-letra-output);
+
+    background-color: var(--color-fondo);
 }
+
 
 /* Breakpoint para Desktops */
 @media screen and (min-width: 1000px) {
     :root {
         --tamanio-icono-info: 32px;
+        --tamanio-textarea: 16pt;
+
+        /* Muestra el muñeco */
+        --display-img-munieco: block;
     }
 }
 
@@ -27,6 +37,10 @@
 @media screen and (min-width: 501px) and (max-width: 999px) {
     :root {
         --tamanio-icono-info: 16px;
+        --tamanio-textarea: 14pt;
+
+        /* Esconde el muñeco */
+        --display-img-munieco: none;
     }
 }
 
@@ -34,11 +48,52 @@
 @media screen and (max-width: 500px) {
     :root {
         --tamanio-icono-info: 12px;
+        --tamanio-textarea: 12pt;
+
+        /* Esconde el muñeco */
+        --display-img-munieco: none;
     }
+}
+
+
+textarea {
+    font-size: var(--tamanio-textarea);
+    color: var(--color-letra-input);
+    resize: none;
+}
+
+.hint {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--color-gris-oscuro);
 }
 
 /* Tamaño del icono de info */
 .hint > svg {
     height: var(--tamanio-icono-info);
     width: var(--tamanio-icono-info);
+    fill: var(--color-gris-oscuro);
+}
+
+button {
+    width: 340px;
+    height: 48px;
+
+    font-size: var(--tamanio-textarea);
+
+    border-radius: 16px;
+    border-style: solid;
+    border-color: var(--color-azul);
+    
+    background-color: var(--color-fondo);
+}
+
+#btn_encriptar {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+}
+
+#img_munieco {
+    display: var(--display-img-munieco);
 }
