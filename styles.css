@@ -1,3 +1,18 @@
-* {
-    font-size: 500px;
+:root {
+    /* Sigo esta paleta: */
+    /* https://coolors.co/palette/f7b267-f79d65-f4845f-f27059-f25c54 */
+    --color-primario: #F7B267;
+    --color-secundario: #F79D65;
+    --color-tercero: #F4845F;
+    --color-cuarto: #F27059;
+    --color-quinto: #F25C54;
+
+    --color-blanco: #fff8f0;
 }
+
+* {
+    /* Reset */
+    margin: 0;
+    padding: 0;
+}
+
