@@ -2,6 +2,7 @@
     /* Sigo los colores de Figma */
     --color-blanco: #ffffff;
     --color-azul: #0a3871;
+    --color-azul-claro: #0d478d;
     --color-fondo: #f3f5fc;
     --color-gris-claro: #d8dfe8;
     --color-gris-oscuro: #495057;
@@ -23,43 +24,66 @@
 
 
 /* Breakpoint para Desktops */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
     :root {
         --tamanio-icono-info: 32px;
-        --tamanio-textarea: 16pt;
+
+        --tamanio-letra-textarea: 16pt;
+        --tamanio-ancho-textarea: 680px;
+        --tamanio-alto-textarea: 300px;
 
         /* Muestra el muñeco */
         --display-img-munieco: block;
+
+        --direccion-flex-main: row;
     }
 }
 
 /* Breakpoint para Tablets */
-@media screen and (min-width: 501px) and (max-width: 999px) {
+@media screen and (min-width: 741px) and (max-width: 1199px) {
     :root {
         --tamanio-icono-info: 16px;
-        --tamanio-textarea: 14pt;
+
+        --tamanio-letra-textarea: 14pt;
+        --tamanio-ancho-textarea: 680px;
+        --tamanio-alto-textarea: 300px;
 
         /* Esconde el muñeco */
         --display-img-munieco: none;
+
+        --direccion-flex-main: column;
     }
 }
 
 /* Breakpoint para Celulares */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 740px) {
     :root {
         --tamanio-icono-info: 12px;
-        --tamanio-textarea: 12pt;
+
+        --tamanio-letra-textarea: 12pt;
+        --tamanio-ancho-textarea: 680px;
+        --tamanio-alto-textarea: 300px;
 
         /* Esconde el muñeco */
         --display-img-munieco: none;
+
+        --direccion-flex-main: column;
     }
 }
 
+main {
+    display: flex;
+    flex-direction: var(--direccion-flex-main);
+    justify-content: space-around;
+    align-items: center;
+}
 
 textarea {
-    font-size: var(--tamanio-textarea);
+    font-size: var(--tamanio-letra-textarea);
     color: var(--color-letra-input);
     resize: none;
+    width: var(--tamanio-ancho-textarea);
+    height: var(--tamanio-alto-textarea);
 }
 
 .hint {
@@ -80,18 +104,33 @@ button {
     width: 340px;
     height: 48px;
 
+    cursor: pointer;
+
     font-size: var(--tamanio-textarea);
+    color: var(--color-letra-input);
 
     border-radius: 16px;
     border-style: solid;
     border-color: var(--color-azul);
     
     background-color: var(--color-fondo);
+
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--color-gris-claro);
 }
 
 #btn_encriptar {
     background-color: var(--color-azul);
     color: var(--color-blanco);
+
+    transition: background-color 0.3s;
+}
+
+#btn_encriptar:hover {
+    background-color: var(--color-azul-claro);
 }
 
 #img_munieco {
